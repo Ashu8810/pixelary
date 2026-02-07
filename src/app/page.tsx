@@ -1,6 +1,25 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { FaGithub, FaAws, FaFigma } from "react-icons/fa";
+import { 
+  FaReact, 
+  FaNodeJs, 
+  FaGit, 
+  FaDocker, 
+  FaNpm 
+} from "react-icons/fa";
+
+import { 
+  SiNextdotjs, 
+  SiTypescript, 
+  SiTailwindcss, 
+  SiPostgresql, 
+  SiMongodb, 
+  SiFirebase, 
+  SiSupabase, 
+  SiNotion, 
+  SiGithubactions 
+} from "react-icons/si";
+import { FaGithub, FaAws, FaFigma, FaBeer} from "react-icons/fa";
 import { SiVercel, SiPython, SiC, SiReplit } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { IoRocketSharp } from "react-icons/io5"; // Antigravity
@@ -9,6 +28,7 @@ import styles from './page.module.css'
 import Roadmap from './components/Roadmap';
 import Members from './components/Members';
 import CuratedPortfolios from './components/CuratedPortfolios';
+
 
 export default function Home() {
   return (
@@ -58,16 +78,22 @@ export default function Home() {
         <div className={styles.techStackSection}>
           <p className={styles.techStackLabel}>Stack</p>
           <div className={styles.techStackGrid}>
-            <span title="GitHub" style={{ color: '#000000' }}><FaGithub /></span>
-            <span title="Vercel" style={{ color: '#000000' }}><SiVercel /></span>
-            <span title="Python" style={{ color: '#3776AB' }}><SiPython /></span>
-            <span title="C" style={{ color: '#00599C' }}><SiC /></span>
-            <span title="Framer Motion" style={{ color: '#0055FF' }}><TbBrandFramerMotion /></span>
-            <span title="Figma" style={{ color: '#F24E1E' }}><FaFigma /></span>
-            <span title="AWS" style={{ color: '#FF9900' }}><FaAws /></span>
-            <span title="Antigravity" style={{ color: '#8A2BE2' }}><IoRocketSharp /></span>
-            <span title="Replit" style={{ color: '#F26207' }}><SiReplit /></span>
-            <span title="Lovable" style={{ color: '#FF4081' }}><GoHeartFill /></span>
+            <span title="React" style={{ color: '#61DAFB' }}><FaReact /></span>
+            <span title="Next.js" style={{ color: '#000000' }}><SiNextdotjs /></span>
+            <span title="TypeScript" style={{ color: '#3178C6' }}><SiTypescript /></span>
+            <span title="Tailwind CSS" style={{ color: '#38BDF8' }}><SiTailwindcss /></span>
+
+            <span title="Node.js" style={{ color: '#339933' }}><FaNodeJs /></span>
+            <span title="PostgreSQL" style={{ color: '#4169E1' }}><SiPostgresql /></span>
+            <span title="MongoDB" style={{ color: '#47A248' }}><SiMongodb /></span>
+            <span title="Firebase" style={{ color: '#FFCA28' }}><SiFirebase /></span>
+            <span title="Supabase" style={{ color: '#3ECF8E' }}><SiSupabase /></span>
+
+            <span title="Git" style={{ color: '#F05032' }}><FaGit /></span>
+            <span title="GitHub Actions" style={{ color: '#2088FF' }}><SiGithubactions /></span>
+            {/* <span title="Docker" style={{ color: '#2496ED' }}><FaDocker /></span> */}
+            <span title="Notion" style={{ color: '#000000' }}><SiNotion /></span>
+            <span title="npm" style={{ color: '#CB3837' }}><FaNpm /></span>
           </div>
         </div>
 
