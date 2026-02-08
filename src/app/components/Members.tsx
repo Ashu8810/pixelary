@@ -11,7 +11,7 @@ const members = [
   },
   {
     name: 'Eshaan Agrawal',
-    image: '/members/rachel.png'
+    image: '/members/eshaan.png'
   },
   // {
   //   name: 'Prasannadeep Das',
