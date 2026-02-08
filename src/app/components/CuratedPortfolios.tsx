@@ -2,8 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './CuratedPortfolios.module.css';
 import { FiSearch, FiFilter, FiBookmark, FiMapPin, FiBriefcase } from 'react-icons/fi';
-import { FaMicrosoft, FaGoogle } from 'react-icons/fa';
-import { SiFlipkart, SiSwiggy, SiZomato, SiMeta } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFigma, SiNodedotjs, SiMongodb, SiExpress, SiFlutter, SiDart, SiFirebase, SiRedux, SiGraphql, SiOpenai, SiVercel } from 'react-icons/si';
 
 const portfolios = [
   {
@@ -14,7 +13,7 @@ const portfolios = [
     // experience: '6 years',
     banner: '/portfolios/elyaitra.png',
     avatar: '/portfolios/elyaitra1.png',
-    brands: [<FaMicrosoft key="ms" />, <FaGoogle key="google" />],
+    technologies: [<SiReact key="react" title="React" />, <SiTypescript key="ts" title="TypeScript" />, <SiNextdotjs key="next" title="Next.js" />, <SiTailwindcss key="tailwind" title="Tailwind CSS" />, <SiOpenai key="openai" title="OpenAI" />, <SiNodedotjs key="node" title="Node.js" />, <SiVercel key="vercel" title="Vercel" />],
     isFeatured: true,
     link: 'https://elyaitra.com'
   },
@@ -26,7 +25,7 @@ const portfolios = [
     experience: '',
     banner: '/portfolios/banner2.png',
     avatar: '/portfolios/avatar2.png',
-    brands: [<SiSwiggy key="swiggy" />],
+    technologies: [<SiNextdotjs key="next" />, <SiTypescript key="ts" />, <SiFigma key="figma" />],
     isFeatured: false,
     link: '#'
   },
@@ -38,7 +37,7 @@ const portfolios = [
     experience: '5 years',
     banner: '/portfolios/banner3.png',
     avatar: '/portfolios/avatar3.png',
-    brands: [<SiMeta key="meta" />],
+    technologies: [<SiNodedotjs key="node" />, <SiMongodb key="mongo" />, <SiExpress key="express" />],
     isFeatured: true,
     link: '#'
   },
@@ -50,7 +49,7 @@ const portfolios = [
     experience: '8 years',
     banner: '/portfolios/banner4.png',
     avatar: '/portfolios/avatar1.png',
-    brands: [<FaGoogle key="google" />, <FaMicrosoft key="ms" />],
+    technologies: [<SiFlutter key="flutter" />, <SiDart key="dart" />, <SiFirebase key="firebase" />],
     isFeatured: true,
     link: '#'
   },
@@ -62,7 +61,7 @@ const portfolios = [
     experience: '4 years',
     banner: '/portfolios/banner5.png',
     avatar: '/portfolios/avatar3.png',
-    brands: [<SiMeta key="meta" />],
+    technologies: [<SiReact key="react" />, <SiRedux key="redux" />, <SiGraphql key="graphql" />],
     isFeatured: false,
     link: '#'
   }
@@ -122,8 +121,8 @@ export default function CuratedPortfolios() {
                       )}
                     </div>
                     <div className={styles.brandLogos}>
-                      {item.brands.map((brand, i) => (
-                        <span key={i} className={styles.brandIcon}>{brand}</span>
+                      {item.technologies.map((tech, i) => (
+                        <span key={i} className={styles.brandIcon}>{tech}</span>
                       ))}
                       {item.isFeatured && (
                           <div className={styles.featuredBadge}>
