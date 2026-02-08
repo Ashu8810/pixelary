@@ -32,7 +32,7 @@ const portfolios = [
   },
   {
     id: 3,
-    name: 'Glancel',
+    name: 'Dodge Challenger',
     location: 'India',
     members: 'Gautami Duvve',
     experience: '5 years',
