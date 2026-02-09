@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './CuratedPortfolios.module.css';
-import { FiSearch, FiFilter, FiBookmark, FiMapPin, FiBriefcase } from 'react-icons/fi';
+import { FiBookmark, FiMapPin, FiBriefcase } from 'react-icons/fi';
 import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFigma, SiNodedotjs, SiMongodb, SiExpress, SiFlutter, SiDart, SiFirebase, SiRedux, SiGraphql, SiOpenai, SiVercel, SiCloudflare, SiHostinger, SiFramer } from 'react-icons/si';
 
 const portfolios = [
@@ -73,17 +73,7 @@ export default function CuratedPortfolios() {
       <div className={styles.container}>
         <h2 className={styles.title}>Curated Projects</h2>
 
-        <div className={styles.filterBar}>
-          <div className={styles.actionsRow}>
-            <button className={styles.actionButton}>
-              <FiFilter /> Filters
-            </button>
-            <div className={styles.searchWrapper}>
-              <FiSearch className={styles.searchIcon} />
-              <input type="text" placeholder="Search Members" className={styles.searchInput} />
-            </div>
-          </div>
-        </div>
+
 
         <div className={styles.portfoliosGrid}>
           {portfolios.map((item) => (
