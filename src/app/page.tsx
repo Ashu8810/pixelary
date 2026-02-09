@@ -28,6 +28,7 @@ import styles from './page.module.css'
 import Roadmap from './components/Roadmap';
 import Members from './components/Members';
 import CuratedPortfolios from './components/CuratedPortfolios';
+import Footer from './components/Footer';
 
 
 export default function Home() {
@@ -42,11 +43,7 @@ export default function Home() {
             </div>
           </Link>
           
-          <div className={styles.navLinks}>
-            <Link href="#">Work</Link>
-            <Link href="#">Studio</Link>
-            <Link href="#">Insights</Link>
-          </div>
+
 
           <div className={styles.headerActions}>
             <Link href="mailto:pixelarystudio@gmail.com" className={styles.ctaButton}>
@@ -112,6 +109,7 @@ export default function Home() {
       <Roadmap />
       <div className={styles.sectionDivider}></div>
       <CuratedPortfolios />
+      <Footer />
 
     </main>
   )

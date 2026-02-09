@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './CuratedPortfolios.module.css';
 import { FiSearch, FiFilter, FiBookmark, FiMapPin, FiBriefcase } from 'react-icons/fi';
-import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFigma, SiNodedotjs, SiMongodb, SiExpress, SiFlutter, SiDart, SiFirebase, SiRedux, SiGraphql, SiOpenai, SiVercel } from 'react-icons/si';
+import { SiReact, SiNextdotjs, SiTailwindcss, SiTypescript, SiFigma, SiNodedotjs, SiMongodb, SiExpress, SiFlutter, SiDart, SiFirebase, SiRedux, SiGraphql, SiOpenai, SiVercel, SiCloudflare, SiHostinger, SiFramer } from 'react-icons/si';
 
 const portfolios = [
   {
@@ -19,57 +19,57 @@ const portfolios = [
   },
   {
     id: 2,
-    name: 'Pixelary',
+    name: 'Smart Hostel Mess Management System',
     location: 'India',
-    members: 'Ayush Dhibar',
-    experience: '',
-    banner: '/portfolios/banner2.png',
-    avatar: '/portfolios/avatar2.png',
-    technologies: [<SiNextdotjs key="next" />, <SiTypescript key="ts" />, <SiFigma key="figma" />],
+    members: 'Ashutosh Patel',
+
+    banner: '/portfolios/Smart_mess.png',
+    avatar: '/portfolios/Ashu.png',
+    technologies: [<SiReact key="react" />, <SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiNodedotjs key="node" />, <SiCloudflare key="cloudflare" />, <SiHostinger key="hostinger" />],
     isFeatured: false,
-    link: '#'
+    link: 'https://smarthostelmess.vercel.app/'
   },
   {
     id: 3,
     name: 'Dodge Challenger',
     location: 'India',
-    members: 'Gautami Duvve',
-    experience: '5 years',
-    banner: '/portfolios/banner3.png',
-    avatar: '/portfolios/avatar3.png',
-    technologies: [<SiNodedotjs key="node" />, <SiMongodb key="mongo" />, <SiExpress key="express" />],
+    members: 'Ashutosh Patel',
+
+    banner: '/portfolios/Doge_challenger.png',
+    avatar: '/portfolios/Ashu.png',
+    technologies: [<SiReact key="react" />, <SiNextdotjs key="next" />, <SiTailwindcss key="tailwind" />, <SiFramer key="framer" />],
     isFeatured: true,
-    link: '#'
+    link: 'https://dodgechallanger.in/'
   },
-  {
-    id: 4,
-    name: 'Fintech App',
-    location: 'Singapore',
-    members: 'Alex Chen',
-    experience: '8 years',
-    banner: '/portfolios/banner4.png',
-    avatar: '/portfolios/avatar1.png',
-    technologies: [<SiFlutter key="flutter" />, <SiDart key="dart" />, <SiFirebase key="firebase" />],
-    isFeatured: true,
-    link: '#'
-  },
-  {
-    id: 5,
-    name: 'Health Tracker',
-    location: 'USA',
-    members: 'Sarah Jordan',
-    experience: '4 years',
-    banner: '/portfolios/banner5.png',
-    avatar: '/portfolios/avatar3.png',
-    technologies: [<SiReact key="react" />, <SiRedux key="redux" />, <SiGraphql key="graphql" />],
-    isFeatured: false,
-    link: '#'
-  }
+  // {
+  //   id: 4,
+  //   name: 'Fintech App',
+  //   location: 'Singapore',
+  //   members: 'Alex Chen',
+  //   experience: '8 years',
+  //   banner: '/portfolios/banner4.png',
+  //   avatar: '/portfolios/avatar1.png',
+  //   technologies: [<SiFlutter key="flutter" />, <SiDart key="dart" />, <SiFirebase key="firebase" />],
+  //   isFeatured: true,
+  //   link: '#'
+  // },
+  // {
+  //   id: 5,
+  //   name: 'Health Tracker',
+  //   location: 'USA',
+  //   members: 'Sarah Jordan',
+  //   experience: '4 years',
+  //   banner: '/portfolios/banner5.png',
+  //   avatar: '/portfolios/avatar3.png',
+  //   technologies: [<SiReact key="react" />, <SiRedux key="redux" />, <SiGraphql key="graphql" />],
+  //   isFeatured: false,
+  //   link: '#'
+  // }
 ];
 
 export default function CuratedPortfolios() {
   return (
-    <section className={styles.curatedSection}>
+    <section id="work" className={styles.curatedSection}>
       <div className={styles.container}>
         <h2 className={styles.title}>Curated Projects</h2>
 
@@ -112,14 +112,7 @@ export default function CuratedPortfolios() {
                   </div>
 
                   <div className={styles.cardFooter}>
-                    <div className={styles.experienceInfo}>
-                      {item.experience && (
-                        <>
-                          <span className={styles.expYears}>{item.experience}</span>
-                          <span className={styles.expLabel}>Experience</span>
-                        </>
-                      )}
-                    </div>
+
                     <div className={styles.brandLogos}>
                       {item.technologies.map((tech, i) => (
                         <span key={i} className={styles.brandIcon}>{tech}</span>

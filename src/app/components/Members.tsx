@@ -1,26 +1,31 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Members.module.css';
 
 const members = [
   {
     name: 'Ashutosh patel',
-    image: '/members/siddhartha.png'
+    image: '/members/Ashu.png',
+    link: 'https://ashutoshpatel.me'
   },
   {
     name: 'Eshaan Agrawal',
-    image: '/members/eshaan.png'
+    image: '/members/eshaan.png',
+    link: 'https://eshaanagrawal.me'
   },
-  // {
-  //   name: 'Prasannadeep Das',
-  //   image: '/members/prasannadeep.png'
-  // },
-  // {
-  //   name: 'Adyatha Bhat',
-  //   image: '/members/adyatha.png'
-  // },
+  {
+    name: 'Aditya Chauhan',
+    image: '/members/Aditya_chaunahan.png',
+    link: '#'
+  },
+  {
+    name: 'Ryan P',
+    image: '/members/ryan.png',
+    link: '#'
+  },
   // {
   //   name: 'Arjun Raghavan',
   //   image: '/members/arjun.png'
@@ -33,7 +38,7 @@ export default function Members() {
       <h2 className={styles.title}>Our Team</h2>
       <div className={styles.membersGrid}>
         {members.map((member, index) => (
-          <div key={index} className={styles.memberCard}>
+          <Link href={member.link || '#'} key={index} className={styles.memberCard}>
             <div className={styles.imageContainer}>
               <div className={styles.imageWrapper}>
                 <img 
@@ -44,7 +49,7 @@ export default function Members() {
               </div>
             </div>
             <span className={styles.memberName}>{member.name}</span>
-          </div>
+          </Link>
         ))}
       </div>
     </section>
