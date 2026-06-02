@@ -1,0 +1,145 @@
+/* Works.module.css */
+.worksSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 120px 20px;
+}
+
+.header {
+    margin-bottom: 80px;
+}
+
+.label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #999;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #111;
+    letter-spacing: -0.04em;
+    margin: 0;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 2rem;
+}
+
+.projectCard {
+    background: #fff;
+    border: 1px solid #EDEDED;
+    border-radius: 24px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    height: 100%;
+}
+
+.projectCard:hover {
+    border-color: #111;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.03);
+}
+
+.projectHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.projectCategory {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.projectStatus {
+    font-size: 0.7rem;
+    font-weight: 700;
+    background: #F5F5F5;
+    color: #666;
+    padding: 4px 10px;
+    border-radius: 100px;
+    text-transform: uppercase;
+}
+
+.projectTitle {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.projectDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.projectFooter {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #111;
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+}
+
+.projectCard:hover .projectFooter {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.projectVisual {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    font-size: 6rem;
+    opacity: 0.03;
+    transform: rotate(-15deg);
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.projectCard:hover .projectVisual {
+    opacity: 0.08;
+    transform: rotate(0deg) scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .projectCard {
+        padding: 30px;
+    }
+
+    .worksSection {
+        padding: 80px 20px;
+    }
+}
