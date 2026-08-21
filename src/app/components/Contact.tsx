@@ -30,7 +30,7 @@ export default function Contact() {
           'Accept': 'application/json'
         },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || 'YOUR_ACCESS_KEY_HERE',
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '91e234f0-d412-4609-a135-76c32c5c0881',
           ...formData,
           subject: `Project Inquiry from ${formData.name}${formData.company ? ` — ${formData.company}` : ''}`
         })
