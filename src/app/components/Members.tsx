@@ -27,7 +27,7 @@ const members = [
     image: '/Eshaan.jpg',
     link: 'https://eshaanagrawal.me',
     socials: {
-      linkedin: 'https://www.linkedin.com/in/eshaan-agrawal-b565a4235/',
+      linkedin: 'https://www.linkedin.com/in/eshaanagrawal/',
       twitter: 'https://x.com/eshaanagrawall',
       instagram: 'https://www.instagram.com/me_eshaanagrawal/',
       email: 'mailto:eshaanagrawal172@gmail.com'
