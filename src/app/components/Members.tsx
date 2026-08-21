@@ -24,7 +24,7 @@ const members = [
     name: 'Eshaan Agrawal',
     role: 'Co-founder',
     bio: 'Building scalable web apps and backend systems.',
-    image: '/members/eshaan.png',
+    image: '/Eshaan.jpg',
     link: 'https://eshaanagrawal.me',
     socials: {
       linkedin: 'https://www.linkedin.com/in/eshaan-agrawal-b565a4235/',
