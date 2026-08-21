@@ -1,5 +1,6 @@
-import React from 'react';
-import { FiLayout, FiPenTool, FiTrendingUp, FiSearch, FiBox, FiShare2, FiLayers, FiSmartphone, FiPrinter, FiArrowRight, FiLock } from 'react-icons/fi';
+'use client';
+import React, { useRef, useState } from 'react';
+import { FiLayout, FiTrendingUp, FiSearch, FiShare2, FiLayers, FiSmartphone, FiLock } from 'react-icons/fi';
 import styles from './Services.module.css';
 
 const services = [
@@ -27,20 +28,20 @@ const services = [
   {
     number: '04',
     name: 'Social Media Managing',
-    description: 'Engage your audience and build brand loyalty through strategic social media management.',
+    description: 'Engage your audience and build brand loyalty through strategic management.',
     icon: <FiShare2 />,
     link: 'https://brightpixel.in/social-media-marketing-company-in-pune/'
   },
   {
     number: '05',
     name: 'UI/UX Design Services',
-    description: 'Improve user experience with intuitive and visually appealing designs.',
+    description: 'Improve user experience with intuitive and visually appealing interfaces.',
     icon: <FiLayers />,
     link: 'https://brightpixel.in/ui-ux-design-company-in-pune/'
   },
   {
     number: '06',
-    name: 'Mobile Application Development',
+    name: 'Mobile Application',
     description: 'We offer Mobile App Design Services to carve your mobile app.',
     icon: <FiSmartphone />,
     link: 'https://brightpixel.in/mobile-app-development-company-in-pune/'
@@ -54,29 +55,69 @@ const services = [
   }
 ];
 
+function BentoCard({ service, index }: { service: any, index: number }) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (cardRef.current) {
+      const rect = cardRef.current.getBoundingClientRect();
+      setMousePosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
+    }
+  };
+
+  // Asymmetrical Bento Grid logic
+  let gridClass = styles.cardSpan1;
+  if (index === 0) gridClass = styles.cardSpan2x2;
+  else if (index === 1 || index === 4) gridClass = styles.cardSpan2x1;
+
+  return (
+    <div 
+      ref={cardRef}
+      className={`${styles.serviceCard} ${gridClass} ${service.isLocked ? styles.serviceCardLocked : ''}`}
+      onMouseMove={handleMouseMove}
+      style={{
+        '--mouse-x': `${mousePosition.x}px`,
+        '--mouse-y': `${mousePosition.y}px`,
+      } as React.CSSProperties}
+    >
+      <div className={styles.cardContent}>
+        <div className={styles.serviceCardHeader}>
+          <div className={styles.serviceIcon}>{service.icon}</div>
+          <span className={styles.serviceNumber}>{service.number}</span>
+        </div>
+        <div className={styles.serviceTextContainer}>
+          <h3 className={styles.serviceName}>{service.name}</h3>
+          <p className={styles.serviceDescription}>{service.description}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Services() {
   return (
-    <section id="services" className={styles.servicesSection}>
-      <p className={styles.sectionLabel}>What we do</p>
-      <h2 className={styles.title}>Services</h2>
-      <p className={styles.subtitle}>
-        End-to-end design and development — from concept to deployment.
-      </p>
-
-      <div className={styles.servicesGrid}>
-        {services.map((service, index) => (
-          <div key={index} className={`${styles.serviceCard} ${service.isLocked ? styles.serviceCardLocked : ''}`}>
-            <div className={styles.serviceCardHeader}>
-              <div className={styles.serviceIcon}>{service.icon}</div>
-              <div>
-                <span className={styles.serviceNumber}>{service.number}</span>
-                <h3 className={styles.serviceName}>{service.name}</h3>
-              </div>
-            </div>
-            <p className={styles.serviceDescription}>{service.description}</p>
+    <div className={styles.servicesSectionWrapper}>
+      <section id="services" className={styles.servicesSection}>
+        <div className={styles.sectionHeader}>
+          <div>
+            <p className={styles.sectionLabel}>What we do</p>
+            <h2 className={styles.title}>Services</h2>
           </div>
-        ))}
-      </div>
-    </section>
+          <p className={styles.subtitle}>
+            End-to-end design and development — from concept to deployment. Building digital experiences that drive growth.
+          </p>
+        </div>
+
+        <div className={styles.servicesGrid}>
+          {services.map((service, index) => (
+            <BentoCard key={index} service={service} index={index} />
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
