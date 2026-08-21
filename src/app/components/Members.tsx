@@ -30,7 +30,7 @@ const members = [
       linkedin: 'https://www.linkedin.com/in/eshaanagrawal/',
       twitter: 'https://x.com/eshaanagrawall',
       instagram: 'https://www.instagram.com/me_eshaanagrawal/',
-      email: 'mailto:eshaanagrawal172@gmail.com'
+      email: 'mailto:agrawaleshaan12@gmail.com'
     }
   },
 ];
