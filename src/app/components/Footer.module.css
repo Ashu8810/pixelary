@@ -1,8 +1,8 @@
+/* Footer.module.css */
 .footer {
-    background-color: #fafafa;
+    background-color: #111;
     padding: 4rem 2rem;
-    border-top: 1px solid #eaeaea;
-    margin-top: 4rem;
+    margin-top: 0;
 }
 
 .container {
@@ -10,41 +10,82 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .topSection {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+}
+
+.brandCol {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .logo {
     font-size: 1.2rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: #111;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #fff;
+}
+
+.tagline {
+    font-size: 0.88rem;
+    color: #888;
+    line-height: 1.6;
+    max-width: 320px;
+}
+
+.linksCol {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.colTitle {
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.footerLink {
+    font-size: 0.9rem;
+    color: #AAA;
+    transition: color 0.2s ease;
+    text-decoration: none;
+}
+
+.footerLink:hover {
+    color: #fff;
 }
 
 .socialLinks {
     display: flex;
-    gap: 1.5rem;
+    gap: 1rem;
+    margin-top: 0.25rem;
 }
 
 .socialIcon {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #666;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, transform 0.2s ease;
+    display: flex;
+    align-items: center;
 }
 
 .socialIcon:hover {
-    color: #111;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
 .bottomSection {
-    border-top: 1px solid #eaeaea;
+    border-top: 1px solid #222;
     padding-top: 2rem;
     display: flex;
     justify-content: space-between;
@@ -54,18 +95,24 @@
 }
 
 .copyright {
-    font-size: 0.9rem;
-    color: #666;
+    font-size: 0.82rem;
+    color: #555;
+}
+
+.location {
+    font-size: 0.82rem;
+    color: #555;
+}
+
+@media (min-width: 768px) {
+    .topSection {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
 }
 
 @media (max-width: 768px) {
-    .topSection {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
     .bottomSection {
-        flex-direction: column-reverse;
+        flex-direction: column;
         align-items: flex-start;
     }
 }

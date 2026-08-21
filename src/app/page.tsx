@@ -1,3 +1,5 @@
+"use client";
+import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -24,31 +26,47 @@ import { SiVercel, SiPython, SiC, SiReplit } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 import { IoRocketSharp } from "react-icons/io5"; // Antigravity
 import { GoHeartFill } from "react-icons/go"; // Lovable
+import { FiMenu, FiX } from "react-icons/fi";
 import styles from './page.module.css'
-import Roadmap from './components/Roadmap';
+import Services from './components/Services';
 import Members from './components/Members';
-import CuratedPortfolios from './components/CuratedPortfolios';
+import Works from './components/Works';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const closeMobileMenu = () => setIsMobileMenuOpen(false);
+
   return (
     <main className={styles.main}>
       <header className={styles.header}>
         <nav className={styles.nav}>
-          <Link href="/" className={styles.logo}>
+          <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
             <div className={styles.logoContainer}>
               <span className={styles.logoMain}>PIXELARY</span>
               <span className={styles.logoSub}>DESIGN & DEVELOPMENT</span>
             </div>
           </Link>
           
-
+          <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksMobileActive : ''}`}>
+            <Link href="#services" className={styles.navLink} onClick={closeMobileMenu}>Services</Link>
+            <Link href="#team" className={styles.navLink} onClick={closeMobileMenu}>Team</Link>
+            <Link href="#contact" className={styles.navLink} onClick={closeMobileMenu}>Contact</Link>
+            <Link href="#contact" className={`${styles.ctaButton} ${styles.mobileOnlyCta}`} onClick={closeMobileMenu}>
+              Book a Consultation
+            </Link>
+          </div>
 
           <div className={styles.headerActions}>
-            <Link href="mailto:pixelarystudio@gmail.com" className={styles.ctaButton}>
-              Start a project
+            <Link href="#contact" className={`${styles.ctaButton} ${styles.desktopOnlyCta}`} onClick={closeMobileMenu}>
+              Book a Consultation
             </Link>
+            <button className={styles.hamburgerButton} onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
+              {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
           </div>
         </nav>
       </header>
@@ -98,17 +116,19 @@ export default function Home() {
           <span className={styles.pillText}>
             Have a project in mind?
           </span>
-          <Link href="mailto:pixelarystudio@gmail.com" className={styles.pillButton}>
+          <Link href="#contact" className={styles.pillButton}>
             Get in touch
           </Link>
         </div>
       </section>
 
+      <Services />
+      <div className={styles.sectionDivider}></div>
       <Members />
       <div className={styles.sectionDivider}></div>
-      <Roadmap />
+      <Works />
       <div className={styles.sectionDivider}></div>
-      <CuratedPortfolios />
+      <Contact />
       <Footer />
 
     </main>

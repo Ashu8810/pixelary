@@ -1,0 +1,195 @@
+/* Services.module.css */
+.servicesSection {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.sectionLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #999;
+    margin-bottom: 1rem;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 550px;
+    margin-bottom: 3rem;
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.serviceCard {
+    background: #fff;
+    border: 1px solid #EAEAEA;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: default;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+}
+
+.serviceCard:hover {
+    background: #fff;
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    border-color: #DDD;
+}
+
+.serviceCardHeader {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.serviceIcon {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #111, #333);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.serviceCard:hover .serviceIcon {
+    transform: scale(1.1) rotate(-5deg);
+}
+
+.serviceNumber {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #CCC;
+    letter-spacing: 0.05em;
+    font-family: monospace;
+}
+
+.serviceName {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: -0.02em;
+}
+
+.serviceDescription {
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: #555;
+    max-width: 500px;
+}
+
+.serviceTagsRow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.serviceTag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: #444;
+    background: #F8F8F8;
+    padding: 0.4rem 0.8rem;
+    border-radius: 99px;
+    letter-spacing: 0.02em;
+    border: 1px solid #EBEBEB;
+    transition: all 0.2s ease;
+}
+
+.serviceTag:hover {
+    background: #111;
+    color: #fff;
+    border-color: #111;
+}
+
+.serviceArrow {
+    position: absolute;
+    top: 3rem;
+    right: 2.5rem;
+    font-size: 1.3rem;
+    color: #111;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.serviceCard:hover .serviceArrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.serviceCardLocked {
+    background: rgba(0, 0, 0, 0.8);
+    border-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+}
+
+.serviceCardLocked .serviceName {
+    color: #fff;
+}
+
+.serviceCardLocked .serviceDescription {
+    color: #ccc;
+}
+
+.serviceCardLocked .serviceNumber {
+    color: #666;
+}
+
+.serviceCardLocked .serviceIcon {
+    background: linear-gradient(135deg, #444, #666);
+    color: #fff;
+}
+
+.serviceCardLocked:hover {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+@media (min-width: 768px) {
+    .servicesGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .title {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .servicesSection {
+        padding: 100px 20px;
+    }
+
+    .title {
+        font-size: 3.2rem;
+    }
+}
