@@ -1,0 +1,28 @@
+# Allow search engines and AI crawlers to index and cite our content
+User-agent: *
+Allow: /
+
+# Specifically ensure AI crawlers are explicitly allowed and welcomed
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Sitemap link
+Sitemap: https://www.pixelary.in/sitemap.xml

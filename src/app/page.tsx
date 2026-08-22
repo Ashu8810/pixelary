@@ -31,6 +31,7 @@ import styles from './page.module.css'
 import Services from './components/Services';
 import Members from './components/Members';
 import Works from './components/Works';
+import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -127,6 +128,8 @@ export default function Home() {
       <Members />
       <div className={styles.sectionDivider}></div>
       <Works />
+      <div className={styles.sectionDivider}></div>
+      <Faq />
       <div className={styles.sectionDivider}></div>
       <Contact />
       <Footer />
