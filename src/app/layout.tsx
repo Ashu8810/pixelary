@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -77,19 +78,58 @@ export default function RootLayout({
           "@type": "ImageObject",
           "url": "https://www.pixelary.in/favicon.ico"
         },
-        "description": "Pixelary is a B2B design and development company focused on creating clean, functional, and scalable digital experiences.",
+        "description": "Pixelary is a custom B2B design and software development studio creating clean, functional, and scalable digital experiences.",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "India"
         },
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Ashutosh Patel",
+            "jobTitle": "Co-founder",
+            "url": "https://ashutoshpatel.me",
+            "sameAs": [
+              "https://www.linkedin.com/in/ashutosh-patel2901/",
+              "https://x.com/ashu00770",
+              "https://www.instagram.com/_ashu_h3r3/"
+            ]
+          },
+          {
+            "@type": "Person",
+            "name": "Eshaan Agrawal",
+            "jobTitle": "Co-founder",
+            "url": "https://eshaanagrawal.me",
+            "sameAs": [
+              "https://www.linkedin.com/in/eshaanagrawal/",
+              "https://x.com/eshaanagrawall",
+              "https://www.instagram.com/me_eshaanagrawal/"
+            ]
+          }
+        ],
         "knowsAbout": [
           "Web Design",
           "Web Development",
           "UI/UX Design",
           "Software Engineering",
           "Next.js Development",
-          "React Development"
+          "React Development",
+          "SEO Services",
+          "Mobile App Development"
         ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://www.pixelary.in/#service-business",
+        "name": "Pixelary",
+        "url": "https://www.pixelary.in",
+        "image": "https://www.pixelary.in/hero-image.jpg",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "India"
+        },
+        "areaServed": "Worldwide"
       },
       {
         "@type": "WebSite",
@@ -118,7 +158,7 @@ export default function RootLayout({
             "name": "What services does Pixelary offer?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We offer complete end-to-end design and development services: Website Design & Development, UI/UX Design, custom Web Application building, SEO, and Mobile Application design."
+              "text": "We offer complete end-to-end design and development services: Website Design & Development, UI/UX Design, custom Web Application building, SEO, Mobile Application design, Digital Marketing, and Cyber Security."
             }
           },
           {
@@ -142,6 +182,8 @@ export default function RootLayout({
     ]
   };
 
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -150,6 +192,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
+        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
       </body>
     </html>
   );

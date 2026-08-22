@@ -41,7 +41,7 @@ export default function Members() {
       <p className={styles.sectionLabel}>Who we are</p>
       <h2 className={styles.title}>The Founders</h2>
       <p className={styles.philosophy}>
-        We're a founder-led B2B company that believes great products come from the intersection of thoughtful design and solid engineering. No layers, no overhead — just direct access to the co-founders building your product.
+        We&apos;re a founder-led B2B company that believes great products come from the intersection of thoughtful design and solid engineering. No layers, no overhead — just direct access to the co-founders building your product.
       </p>
 
       <div className={styles.membersGrid}>
@@ -49,9 +49,11 @@ export default function Members() {
           <div key={index} className={styles.memberCard}>
             <div className={styles.imageContainer}>
               <div className={styles.imageWrapper}>
-                <img 
+                <Image 
                   src={member.image} 
-                  alt={member.name} 
+                  alt={`${member.name} headshot — Co-founder at Pixelary`} 
+                  width={150}
+                  height={150}
                   className={styles.avatar}
                 />
               </div>

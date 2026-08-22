@@ -1,7 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { FaInstagram, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
-import { FiMail } from 'react-icons/fi';
+import { FaInstagram, FaTwitter } from 'react-icons/fa';
 import styles from './Footer.module.css';
 
 export default function Footer() {
@@ -12,17 +11,25 @@ export default function Footer() {
       <div className={styles.container}>
         <div className={styles.topSection}>
           <div className={styles.brandCol}>
-            <div className={styles.logo}>PIXELARY</div>
+            <Link href="/" className={styles.logo}>PIXELARY</Link>
             <p className={styles.tagline}>
-              B2B design & development company focused on building clean, functional, and scalable digital experiences.
+              Custom B2B web design & software development company focused on building clean, functional, and scalable digital experiences.
             </p>
           </div>
 
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>Navigate</h4>
-            <Link href="#services" className={styles.footerLink}>Services</Link>
-            <Link href="#team" className={styles.footerLink}>Team</Link>
-            <Link href="#contact" className={styles.footerLink}>Contact</Link>
+            <Link href="/services" className={styles.footerLink}>Services</Link>
+            <Link href="/work" className={styles.footerLink}>Case Studies</Link>
+            <Link href="/blog" className={styles.footerLink}>Blog</Link>
+            <Link href="/#team" className={styles.footerLink}>Team</Link>
+            <Link href="/#contact" className={styles.footerLink}>Contact</Link>
+          </div>
+
+          <div className={styles.linksCol}>
+            <h4 className={styles.colTitle}>Legal</h4>
+            <Link href="/privacy-policy" className={styles.footerLink}>Privacy Policy</Link>
+            <Link href="/terms-and-conditions" className={styles.footerLink}>Terms & Conditions</Link>
           </div>
 
           <div className={styles.linksCol}>
@@ -37,12 +44,6 @@ export default function Footer() {
               <Link href="https://x.com/Pixelary_" className={styles.socialIcon} aria-label="X (Twitter)" target="_blank">
                 <FaTwitter />
               </Link>
-              {/* <Link href="#" className={styles.socialIcon} aria-label="GitHub" target="_blank">
-                <FaGithub />
-              </Link>
-              <Link href="#" className={styles.socialIcon} aria-label="LinkedIn" target="_blank">
-                <FaLinkedin />
-              </Link> */}
             </div>
           </div>
         </div>

@@ -1,12 +1,9 @@
 "use client";
-import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { 
   FaReact, 
   FaNodeJs, 
   FaGit, 
-  FaDocker, 
   FaNpm 
 } from "react-icons/fa";
 
@@ -21,13 +18,8 @@ import {
   SiNotion, 
   SiGithubactions 
 } from "react-icons/si";
-import { FaGithub, FaAws, FaFigma, FaBeer} from "react-icons/fa";
-import { SiVercel, SiPython, SiC, SiReplit } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import { IoRocketSharp } from "react-icons/io5"; // Antigravity
-import { GoHeartFill } from "react-icons/go"; // Lovable
-import { FiMenu, FiX } from "react-icons/fi";
-import styles from './page.module.css'
+import Header from './components/Header';
+import styles from './page.module.css';
 import Services from './components/Services';
 import Members from './components/Members';
 import Works from './components/Works';
@@ -35,42 +27,10 @@ import Faq from './components/Faq';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-
 export default function Home() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const toggleMobileMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
-  const closeMobileMenu = () => setIsMobileMenuOpen(false);
-
   return (
     <main className={styles.main}>
-      <header className={styles.header}>
-        <nav className={styles.nav}>
-          <Link href="/" className={styles.logo} onClick={closeMobileMenu}>
-            <div className={styles.logoContainer}>
-              <span className={styles.logoMain}>PIXELARY</span>
-              <span className={styles.logoSub}>DESIGN & DEVELOPMENT</span>
-            </div>
-          </Link>
-          
-          <div className={`${styles.navLinks} ${isMobileMenuOpen ? styles.navLinksMobileActive : ''}`}>
-            <Link href="#services" className={styles.navLink} onClick={closeMobileMenu}>Services</Link>
-            <Link href="#team" className={styles.navLink} onClick={closeMobileMenu}>Team</Link>
-            <Link href="#contact" className={styles.navLink} onClick={closeMobileMenu}>Contact</Link>
-            <Link href="#contact" className={`${styles.ctaButton} ${styles.mobileOnlyCta}`} onClick={closeMobileMenu}>
-              Book a Consultation
-            </Link>
-          </div>
-
-          <div className={styles.headerActions}>
-            <Link href="#contact" className={`${styles.ctaButton} ${styles.desktopOnlyCta}`} onClick={closeMobileMenu}>
-              Book a Consultation
-            </Link>
-            <button className={styles.hamburgerButton} onClick={toggleMobileMenu} aria-label="Toggle mobile menu">
-              {isMobileMenuOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-            </button>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       <section className={styles.hero}>
         {/* Background Grid Lines - Scoped to Hero */}

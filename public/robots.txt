@@ -1,6 +1,7 @@
 # Allow search engines and AI crawlers to index and cite our content
 User-agent: *
 Allow: /
+Disallow: /api/
 
 # Specifically ensure AI crawlers are explicitly allowed and welcomed
 User-agent: GPTBot
