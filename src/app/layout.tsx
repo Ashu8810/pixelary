@@ -8,11 +8,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.pixelary.in'),
-  title: "Pixelary | Custom Web Design & Software Development Studio",
-  description: "Pixelary is a premier design and development studio. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
+  title: "Pixelary | Custom B2B Web Design & Software Development Company",
+  description: "Pixelary is a premier B2B design and development company. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
   keywords: [
     "Pixelary",
-    "web design studio",
+    "B2B web design company",
     "custom software development",
     "UI/UX design services",
     "front-end development",
@@ -26,8 +26,8 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: "Pixelary | Custom Web Design & Software Development Studio",
-    description: "Pixelary is a premier design and development studio. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
+    title: "Pixelary | Custom B2B Web Design & Software Development Company",
+    description: "Pixelary is a premier B2B design and development company. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
     url: 'https://www.pixelary.in',
     siteName: 'Pixelary',
     locale: 'en_US',
@@ -37,14 +37,14 @@ export const metadata: Metadata = {
         url: '/hero-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Pixelary Design & Development Studio',
+        alt: 'Pixelary Design & Development Company',
       }
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Pixelary | Custom Web Design & Software Development Studio",
-    description: "Pixelary is a premier design and development studio. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
+    title: "Pixelary | Custom B2B Web Design & Software Development Company",
+    description: "Pixelary is a premier B2B design and development company. We build clean, modern, and high-performance websites, web applications, and custom digital products that scale.",
     images: ['/hero-image.jpg'],
   },
   robots: {
@@ -77,7 +77,7 @@ export default function RootLayout({
           "@type": "ImageObject",
           "url": "https://www.pixelary.in/favicon.ico"
         },
-        "description": "Pixelary is a design and development studio focused on creating clean, functional, and scalable digital experiences.",
+        "description": "Pixelary is a B2B design and development company focused on creating clean, functional, and scalable digital experiences.",
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "India"
@@ -110,7 +110,7 @@ export default function RootLayout({
             "name": "What is Pixelary?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Pixelary is a custom web design and software development studio that builds modern, responsive, and high-performance websites, web applications, and digital experiences."
+              "text": "Pixelary is a custom B2B web design and software development company that builds modern, responsive, and high-performance websites, web applications, and digital experiences."
             }
           },
           {

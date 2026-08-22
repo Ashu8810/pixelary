@@ -41,7 +41,7 @@ export default function Members() {
       <p className={styles.sectionLabel}>Who we are</p>
       <h2 className={styles.title}>The Founders</h2>
       <p className={styles.philosophy}>
-        We're a founder-led studio that believes great products come from the intersection of thoughtful design and solid engineering. No layers, no overhead — just direct access to the co-founders building your product.
+        We're a founder-led B2B company that believes great products come from the intersection of thoughtful design and solid engineering. No layers, no overhead — just direct access to the co-founders building your product.
       </p>
 
       <div className={styles.membersGrid}>

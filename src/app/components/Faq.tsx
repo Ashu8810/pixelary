@@ -7,16 +7,13 @@ import styles from './Faq.module.css';
 const faqs = [
   {
     question: "What is Pixelary and what do you do?",
-    answer: "Pixelary is a design and development studio focused on creating clean, functional, and scalable digital experiences. We partner with startups and established businesses to design, build, and optimize custom web products, mobile applications, and high-performance websites."
+    answer: "Pixelary is a B2B design and development company focused on creating clean, functional, and scalable digital experiences. We partner with startups and established businesses to design, build, and optimize custom web products, mobile applications, and high-performance websites."
   },
   {
     question: "What services does Pixelary provide?",
     answer: "We provide end-to-end design and development solutions. This includes Custom Web Design & Development (React, Next.js), UI/UX Design, custom Web Applications, Mobile App Development, SEO optimization, and Digital Marketing strategies."
   },
-  {
-    question: "What is your primary technology stack?",
-    answer: "Our core technology stack is built on modern, scalable technologies. For frontend, we use React, Next.js, TypeScript, and Tailwind CSS. For backend and databases, we use Node.js, PostgreSQL, MongoDB, Firebase, and Supabase."
-  },
+
   {
     question: "How do I start a project with Pixelary?",
     answer: "Starting a project is simple. You can send us a brief through our Contact form specifying your name, company, project type, budget, and description. We'll review your inquiry and get back to you within 24 hours to schedule a discovery call."

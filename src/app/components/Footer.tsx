@@ -14,7 +14,7 @@ export default function Footer() {
           <div className={styles.brandCol}>
             <div className={styles.logo}>PIXELARY</div>
             <p className={styles.tagline}>
-              Design & development studio focused on building clean, functional, and scalable digital experiences.
+              B2B design & development company focused on building clean, functional, and scalable digital experiences.
             </p>
           </div>
 
@@ -27,8 +27,8 @@ export default function Footer() {
 
           <div className={styles.linksCol}>
             <h4 className={styles.colTitle}>Connect</h4>
-            <Link href="mailto:pixelarystudio@gmail.com" className={styles.footerLink}>
-              pixelarystudio@gmail.com
+            <Link href="mailto:agrawaleshaan12@gmail.com" className={styles.footerLink}>
+              agrawaleshaan12@gmail.com
             </Link>
             <div className={styles.socialLinks}>
               <Link href="https://www.instagram.com/pixelary_studio/" className={styles.socialIcon} aria-label="Instagram" target="_blank">

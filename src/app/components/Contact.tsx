@@ -64,7 +64,7 @@ export default function Contact() {
               <div className={styles.contactMetaIcon}><FiMail /></div>
               <div className={styles.contactMetaText}>
                 <span className={styles.contactMetaLabel}>Email</span>
-                <span className={styles.contactMetaValue}>pixelarystudio@gmail.com</span>
+                <span className={styles.contactMetaValue}>agrawaleshaan12@gmail.com</span>
               </div>
             </div>
             <div className={styles.contactMetaItem}>

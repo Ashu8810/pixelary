@@ -88,7 +88,7 @@ export default function Home() {
           <span className={styles.hookHighlight}>__modern web products.</span>
         </h1>
         <p className={styles.description}>
-          Pixelary is a design and development studio focused on creating clean, functional, and scalable digital experiences.
+          Pixelary is a B2B design and development company focused on creating clean, functional, and scalable digital experiences.
         </p>
 
         <div className={styles.techStackSection}>
