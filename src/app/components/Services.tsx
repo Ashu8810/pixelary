@@ -1,6 +1,7 @@
 'use client';
 import React, { useRef, useState } from 'react';
-import { FiLayout, FiTrendingUp, FiSearch, FiShare2, FiLayers, FiSmartphone, FiLock } from 'react-icons/fi';
+import Link from 'next/link';
+import { FiLayout, FiTrendingUp, FiSearch, FiShare2, FiLayers, FiSmartphone, FiLock, FiArrowUpRight } from 'react-icons/fi';
 import styles from './Services.module.css';
 
 const services = [
@@ -9,57 +10,66 @@ const services = [
     name: 'Website Design & Development',
     description: 'Create stunning, user-friendly websites that enhance your brand’s online presence.',
     icon: <FiLayout />,
-    link: 'https://brightpixel.in/web-design-company-in-pune/'
+    link: '/services/website-design-development'
   },
   {
     number: '02',
     name: 'Digital Marketing',
     description: 'Boost your online reach with targeted strategies for better engagement.',
     icon: <FiTrendingUp />,
-    link: 'https://brightpixel.in/best-digital-marketing-company-in-pune/'
+    link: '/services/digital-marketing'
   },
   {
     number: '03',
     name: 'SEO Services',
     description: 'Optimize your website for higher rankings and increased organic traffic.',
     icon: <FiSearch />,
-    link: 'https://brightpixel.in/seo-company-in-pune/'
+    link: '/services/seo-services'
   },
   {
     number: '04',
-    name: 'Social Media Managing',
+    name: 'Social Media Management',
     description: 'Engage your audience and build brand loyalty through strategic management.',
     icon: <FiShare2 />,
-    link: 'https://brightpixel.in/social-media-marketing-company-in-pune/'
+    link: '/services/social-media-management'
   },
   {
     number: '05',
     name: 'UI/UX Design Services',
     description: 'Improve user experience with intuitive and visually appealing interfaces.',
     icon: <FiLayers />,
-    link: 'https://brightpixel.in/ui-ux-design-company-in-pune/'
+    link: '/services/ui-ux-design'
   },
   {
     number: '06',
     name: 'Mobile Application',
-    description: 'We offer Mobile App Design Services to carve your mobile app.',
+    description: 'We offer Mobile App Design & Development Services to carve your mobile app.',
     icon: <FiSmartphone />,
-    link: 'https://brightpixel.in/mobile-app-development-company-in-pune/'
+    link: '/services/mobile-app-development'
   },
   {
     number: '07',
     name: 'Cyber Security',
     description: 'Protect your digital assets with advanced security measures.',
     icon: <FiLock />,
-    isLocked: true
+    link: '/services/cyber-security'
   }
 ];
 
-function BentoCard({ service, index }: { service: any, index: number }) {
-  const cardRef = useRef<HTMLDivElement>(null);
+interface ServiceItem {
+  number: string;
+  name: string;
+  description: string;
+  icon: React.ReactNode;
+  link: string;
+  isLocked?: boolean;
+}
+
+function BentoCard({ service, index }: { service: ServiceItem, index: number }) {
+  const cardRef = useRef<HTMLAnchorElement>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     if (cardRef.current) {
       const rect = cardRef.current.getBoundingClientRect();
       setMousePosition({
@@ -75,9 +85,10 @@ function BentoCard({ service, index }: { service: any, index: number }) {
   else if (index === 1 || index === 4) gridClass = styles.cardSpan2x1;
 
   return (
-    <div 
+    <Link 
       ref={cardRef}
-      className={`${styles.serviceCard} ${gridClass} ${service.isLocked ? styles.serviceCardLocked : ''}`}
+      href={service.link}
+      className={`${styles.serviceCard} ${gridClass}`}
       onMouseMove={handleMouseMove}
       style={{
         '--mouse-x': `${mousePosition.x}px`,
@@ -93,8 +104,12 @@ function BentoCard({ service, index }: { service: any, index: number }) {
           <h3 className={styles.serviceName}>{service.name}</h3>
           <p className={styles.serviceDescription}>{service.description}</p>
         </div>
+        <div className={styles.readMoreContainer}>
+          <span>Learn more</span>
+          <FiArrowUpRight className={styles.readMoreArrow} />
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
 

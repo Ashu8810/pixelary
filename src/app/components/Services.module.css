@@ -218,6 +218,29 @@
     max-width: 80%;
 }
 
+.readMoreContainer {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s ease;
+}
+
+.serviceCard:hover .readMoreContainer {
+    color: #fff;
+}
+
+.readMoreArrow {
+    transition: transform 0.3s ease;
+}
+
+.serviceCard:hover .readMoreArrow {
+    transform: translate(3px, -3px);
+}
+
 /* Locked Card Variation */
 .serviceCardLocked {
     opacity: 0.7;

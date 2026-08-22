@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { FiMail, FiClock, FiMapPin, FiCheck } from 'react-icons/fi';
 import styles from './Contact.module.css';
 
@@ -177,7 +178,7 @@ export default function Contact() {
               Send project brief
             </button>
             <p className={styles.formNote}>
-              We&apos;ll review your brief and schedule a discovery call within 24 hours.
+              We&apos;ll review your brief and schedule a discovery call within 24 hours. By submitting, you agree to our <Link href="/privacy-policy" style={{ color: '#fff', textDecoration: 'underline' }}>Privacy Policy</Link>.
             </p>
           </form>
         ) : (
