@@ -182,7 +182,7 @@ export default function RootLayout({
     ]
   };
 
-  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || 'G-Z1DHMHD568';
 
   return (
     <html lang="en">
@@ -192,7 +192,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
         {children}
-        {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
+        <GoogleAnalytics gaId={gaId} />
       </body>
     </html>
   );
