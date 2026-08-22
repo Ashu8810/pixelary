@@ -25,14 +25,5 @@ export const projects = [
     status: 'Live',
     link: 'https://commit-iq-iota.vercel.app',
     image: '/commitiq.png'
-  },
-  {
-    number: '04',
-    title: 'North Sikkim Sharing',
-    description: 'The best budget tour in Sikkim. Join in the activities and adventures of most loved locations.',
-    category: 'Web Experience',
-    status: 'Live',
-    link: 'https://www.northsikkimsharing.com/',
-    image: '/Nss.png'
   }
 ];
