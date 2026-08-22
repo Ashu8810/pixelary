@@ -7,6 +7,8 @@ import styles from './Contact.module.css';
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [botcheck, setBotcheck] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,6 +24,27 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Spam honeypot check: If botcheck is filled by automated script, drop submission silently
+    if (botcheck) {
+      setSubmitted(true);
+      return;
+    }
+
+    if (isSubmitting) return;
+
+    // Input sanitization & boundary checks
+    const trimmedName = formData.name.trim().slice(0, 100);
+    const trimmedEmail = formData.email.trim().slice(0, 100);
+    const trimmedCompany = formData.company.trim().slice(0, 100);
+    const trimmedDescription = formData.description.trim().slice(0, 3000);
+
+    if (!trimmedName || !trimmedEmail || !trimmedDescription) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    setIsSubmitting(true);
     
     try {
       const response = await fetch('https://api.web3forms.com/submit', {
@@ -32,8 +55,14 @@ export default function Contact() {
         },
         body: JSON.stringify({
           access_key: process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || '91e234f0-d412-4609-a135-76c32c5c0881',
-          ...formData,
-          subject: `Project Inquiry from ${formData.name}${formData.company ? ` — ${formData.company}` : ''}`
+          name: trimmedName,
+          email: trimmedEmail,
+          company: trimmedCompany,
+          projectType: formData.projectType,
+          budget: formData.budget,
+          description: trimmedDescription,
+          botcheck: botcheck,
+          subject: `Project Inquiry from ${trimmedName}${trimmedCompany ? ` — ${trimmedCompany}` : ''}`
         })
       });
 
@@ -47,6 +76,8 @@ export default function Contact() {
     } catch (error) {
       console.error("Error submitting form", error);
       alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -87,6 +118,17 @@ export default function Contact() {
 
         {!submitted ? (
           <form onSubmit={handleSubmit} className={styles.contactForm}>
+            {/* Honeypot field for bot detection */}
+            <input 
+              type="checkbox" 
+              name="botcheck" 
+              className="hidden" 
+              style={{ display: 'none' }}
+              tabIndex={-1}
+              autoComplete="off"
+              onChange={e => setBotcheck(e.target.checked)} 
+            />
+
             <div className={styles.formRow}>
               <div className={styles.formGroup}>
                 <label className={styles.formLabel}>Name *</label>
@@ -94,6 +136,7 @@ export default function Contact() {
                   type="text"
                   name="name"
                   required
+                  maxLength={100}
                   placeholder="Your name"
                   className={styles.formInput}
                   value={formData.name}
@@ -106,6 +149,7 @@ export default function Contact() {
                   type="email"
                   name="email"
                   required
+                  maxLength={100}
                   placeholder="you@company.com"
                   className={styles.formInput}
                   value={formData.email}
@@ -120,6 +164,7 @@ export default function Contact() {
                 <input
                   type="text"
                   name="company"
+                  maxLength={100}
                   placeholder="Company name (optional)"
                   className={styles.formInput}
                   value={formData.company}
@@ -167,6 +212,7 @@ export default function Contact() {
               <textarea
                 name="description"
                 required
+                maxLength={3000}
                 placeholder="Brief overview of your project, goals, and timeline..."
                 className={styles.formTextarea}
                 value={formData.description}
@@ -174,8 +220,8 @@ export default function Contact() {
               />
             </div>
 
-            <button type="submit" className={styles.submitButton}>
-              Send project brief
+            <button type="submit" disabled={isSubmitting} className={styles.submitButton}>
+              {isSubmitting ? 'Sending...' : 'Send project brief'}
             </button>
             <p className={styles.formNote}>
               We&apos;ll review your brief and schedule a discovery call within 24 hours. By submitting, you agree to our <Link href="/privacy-policy" style={{ color: '#fff', textDecoration: 'underline' }}>Privacy Policy</Link>.
